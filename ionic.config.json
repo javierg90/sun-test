@@ -1,0 +1,7 @@
+{
+  "name": "suncolombia-test",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
