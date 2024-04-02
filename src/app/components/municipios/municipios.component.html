@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-grid style="min-height: 100%;">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="2" class="ion-text-center" *ngIf="municipios.length == 0">
+        <ion-spinner name="dots"></ion-spinner>
+      </ion-col>
+      <ion-col size="12" *ngIf="municipios.length > 0">
+        <ion-list [inset]="true" *ngIf="municipios.length > 0">
+          <ion-list-header>
+            <ion-title class="ion-no-padding">Municipios</ion-title>
+          </ion-list-header>
+          <ion-item [button]="true" *ngFor="let municipio of municipios" (click)="navigateTo(municipio.dane)">
+            <ion-label>{{municipio.nombre}}</ion-label>
+            <ion-avatar slot="end" *ngIf="CodMun == municipio.dane">
+              <img src="assets\icon\blue-check.svg">
+            </ion-avatar>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

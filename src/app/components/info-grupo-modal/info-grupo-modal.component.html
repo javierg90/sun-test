@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Info Grupo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="ion-padding">
+    <ion-row class="ion-padding-horizontal ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" size-md="4" class="ion-padding-horizontal">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+      </ion-col>
+      <ion-col size="12" size-md="8" class="ion-padding-horizontal">
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-label><b>ID:</b> {{id}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Nombre:</b> {{nombre}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Sede:</b> {{sede}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Institución:</b> {{institucion}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Municipio:</b> {{municipio}}</ion-label>
+              </ion-item>
+              <ion-item>
+                <ion-label><b>Grupo No°:</b> {{numGrupo}}</ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col size="12" text-center>
+        <ion-button expand="block" color="secondary" (click)="closeModel()">Ok</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

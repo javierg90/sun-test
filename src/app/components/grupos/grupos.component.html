@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-grid style="min-height: 100%;">
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="2" class="ion-text-center" *ngIf="grupos.length == 0">
+        <ion-spinner name="dots"></ion-spinner>
+      </ion-col>
+      <ion-col size="12" *ngIf="grupos.length > 0">
+        <ion-list [inset]="true">
+          <ion-list-header>
+            <ion-title class="ion-no-padding">Grupos</ion-title>
+          </ion-list-header>
+          <ion-item [button]="true" *ngFor="let grupo of grupos" (click)="openModal(grupo.id)">
+            <ion-label>{{grupo.nombre}}</ion-label>
+          </ion-item>
+        </ion-list>
+        <ion-text *ngIf="ErrorGrupos" color="danger">Selecciona una sede primero</ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

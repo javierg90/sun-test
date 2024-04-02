@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="ion-text-center">
+    <ion-title>Ingreso SunColombia Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <form (ngSubmit)="onSubmit()">
+      <ion-row class="ion-justify-content-center ion-align-items-center">
+        <ion-avatar class="ion-margin">
+          <img alt="Silhouette of a person's head" src="assets\icon\person-circle-outline.svg" />
+        </ion-avatar>
+        <ion-col size="11">
+          <ion-item>
+            <ion-label position="floating">Usuario</ion-label>
+            <ion-input [(ngModel)]="user" name="user"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Contraseña</ion-label>
+            <ion-input [(ngModel)]="password" name="password" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="11">
+          <ion-note color="danger" *ngIf="error">{{error}}</ion-note>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button class="ion-margin" expand="block" type="submit">Iniciar Sesión</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>

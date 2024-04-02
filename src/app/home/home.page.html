@@ -1,20 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header class="ion-hide-md-up">
+  <ion-toolbar class="ion-text-center">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="assets\icon\SUN.png" alt="logo-sun" width="100" height="auto">
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-split-pane when="md" contentId="main">
+    <ion-menu contentId="main" role="navigation">
+      <ion-header>
+        <ion-toolbar color="tertiary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-no-padding">
+        <ion-list lines="full">
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of pages">
+            <ion-item [button]="true" [routerDirection]="'root'" (click)="navigateTo(p.url)">
+              <ion-icon name="logo-ionic" color="primary"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div class="ion-page" id="main">
+      <ion-header>
+        <ion-toolbar class="ion-text-center">
+          <img src="assets\icon\SUN.png" alt="logo-sun" width="100" height="auto">
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-router-outlet id="resultados"></ion-router-outlet>
+      </ion-content>
+    </div>
+  </ion-split-pane>
 </ion-content>
